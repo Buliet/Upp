@@ -1,5 +1,5 @@
 body {
-    background-color: #49B749;
+    background-color: #000000;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
@@ -38,6 +38,7 @@ body {
     transition: all 0.5s ease-out;
 }
 
+/* 偶数行-even 奇数行-odd */
 .todo-wrapper ol li:nth-child(even) {
     background: #ddd;
 }

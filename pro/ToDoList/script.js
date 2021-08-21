@@ -98,3 +98,12 @@ function loadList() {
 }
 
 loadList();
+
+//enter键-响应
+function keyDown() {
+    var keycode = event.keyCode;
+    if (keycode == 13) //回车键是13
+    {
+        addToDoItem(); //回车后的响应函数
+    }
+}

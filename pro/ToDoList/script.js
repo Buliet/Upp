@@ -1,6 +1,10 @@
 // 添加 TODO
 var addButton = document.getElementById("add-button");
+// 注意监听函数 不加()
 addButton.addEventListener("click", addToDoItem);
+
+var toDoEntryBox = document.getElementById("todo-entry-box");
+var toDoList = document.getElementById("todo-list");
 
 function addToDoItem() {
 
@@ -11,9 +15,6 @@ function addToDoItem() {
     toDoEntryBox.value = '';
     newToDoItem(itemText, false);
 }
-
-var toDoEntryBox = document.getElementById("todo-entry-box");
-var toDoList = document.getElementById("todo-list");
 
 function newToDoItem(itemText, completed) {
     var toDoItem = document.createElement("li");
@@ -30,10 +31,16 @@ function newToDoItem(itemText, completed) {
 //enter键-响应
 function keyDown() {
     var keycode = event.keyCode;
+    console.log(keycode);
     if (keycode == 13) //回车键是13
     {
         addToDoItem(); //回车后的响应函数
     }
+}
+
+// 未完成转换已完成
+function toggleToDoItemState() {
+    this.classList.contains("completed") ? this.classList.remove("completed") : this.classList.add("completed");
 }
 
 // 清空已完成
@@ -46,6 +53,7 @@ function clearCompletedToDoItems() {
     // 增加 风险操作确认
     var IsSure = confirm("确认清空已完成?");
     if (IsSure) {
+        // 注意是 Elements
         var completedItems = toDoList.getElementsByClassName("completed");
 
         while (completedItems.length > 0) {
@@ -94,6 +102,7 @@ function saveList(stype = 0) {
         toDoList.children.length; i++) {
         var toDo = toDoList.children.item(i);
         var toDoInfo = {
+            // 获取 内部文本
             "task": toDo.innerText,
             "completed": toDo.classList.contains("completed")
         };
@@ -123,13 +132,12 @@ function loadList() {
     }
 }
 
-// 未完成转换已完成
-function toggleToDoItemState() {
-    this.classList.contains("completed") ? this.classList.remove("completed") : this.classList.add("completed");
+function startPro() {
+    // 首次加载历史数据
+    loadList();
+
+    // 每隔 60s 自动保存
+    setInterval("autosave()", 1000 * 60);
 }
 
-// 首次加载历史数据
-loadList();
-
-// 每隔 60s 自动保存
-setInterval("autosave()", 1000 * 60);
+startPro();

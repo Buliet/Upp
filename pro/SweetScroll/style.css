@@ -1,0 +1,105 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    font: 400 15px/1.8 "Lato", sans-serif;
+    color: White;
+}
+
+
+.cd-logo,
+.kitchen-equipment,
+.cake-ingredients {
+    /* 定位类型-相对 */
+    position: relative;
+    /* 背景图片初始在中间 */
+    background-position: center;
+    /* 背景图片重复方式 */
+    background-repeat: no-repeat;
+    /* 背景图片颜色 */
+    background-color: #642580;
+    /* 拉伸/缩放方式-背景图片完全填充 */
+    background-size: cover;
+
+    min-height: 50%;
+    /* 透明度 */
+    opacity: 0.7;
+    /* 背景固定 */
+    background-attachment: fixed;
+}
+
+.cd-logo {
+    /* 背景图片 */
+    background-image: url("assets/CoderDojo.png");
+    min-height: 100%;
+    background-size: auto;
+}
+
+.kitchen-equipment {
+    background-image: url("assets/utensils.JPG");
+}
+
+.cake-ingredients {
+    background-image: url("assets/ingredients.jpg");
+}
+
+h3 {
+    /* 文本字符间距 */
+    letter-spacing: 5px;
+    /* 文本大小写 */
+    text-transform: uppercase;
+    /* 字体格式 */
+    font: 30px "Lato", sans-serif;
+    /* 颜色 */
+    color: white;
+    /* 文本对齐方式 */
+    text-align: center;
+}
+
+.textSection {
+    background-color: #642580;
+    padding: 5px 80px;
+    line-height: 60px;
+}
+
+.textSection p {
+    font-size: 20px;
+    margin-left: 500px;
+}
+
+.textSection ul {
+    font-size: 20px;
+    margin-left: 650px;
+}
+
+.caption {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.border {
+    background-color: #41BAC1;
+    color: white;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+}
+
+/* Turn off parallax scrolling for
+ * tablets and phones as it is not supported
+ */
+@media only screen and (max-device-width: 1024px) {
+
+    .cd-logo,
+    .layer-cake,
+    .kitchen-equipment,
+    .cake-ingredients,
+    .bowl-of-cakemix,
+    .cake-in-oven,
+    .decorated-cake {
+        background-attachment: scroll;
+    }
+}

@@ -1,24 +1,33 @@
 body {
-    background-color: #000000;
+    /* 背景色 */
+    background-color: #000;
+    /* 字体列表, 依次使用 */
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 .todo-wrapper {
+    /* 顶部边距(外部) */
     margin-top: 50px;
     background-color: #fff;
+    /* 外边框圆角 */
     border-radius: 15px;
     margin-left: auto;
     margin-right: auto;
+    /* 内边距 */
     padding: 30px;
+    /* 字体粗细度 */
     font-weight: 300;
 }
 
 .todo-wrapper h2 {
+    /* 外边距 */
     margin: 0;
 }
 
 .todo-wrapper p {
+    /* 字体样式-书写体 */
     font-style: italic;
+    /* 颜色 */
     color: #666;
     margin: 5px 0;
 }
@@ -30,38 +39,48 @@ body {
 .todo-wrapper ol li {
     margin: 5px 0;
     padding: 3px;
+    /* 控制文本选中 */
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    /* 过渡 */
     -webkit-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
 }
 
+/* 当前元素的兄弟元素 */
 /* 偶数行-even 奇数行-odd */
 .todo-wrapper ol li:nth-child(even) {
     background: #ddd;
 }
 
 .todo-wrapper .completed {
+    /* 文本装饰 */
     text-decoration: line-through;
     color: #666;
 }
 
 .todo-wrapper .pretty-button {
-    margin: 10px 2px;
+    margin: 10px 0 10px 100px;
     padding: 5px 20px;
     border-radius: 15px;
     background-color: #0093D5;
     border: none;
     color: #fff;
+    /* 内容对齐  */
     text-align: center;
+    /* 布局方式:块级元素展示在一行 */
     display: inline-block;
+    /* 字体大小 */
     font-size: small;
 }
 
+/* :hover 鼠标悬停展示 */
 .todo-wrapper .pretty-button:hover {
+    /* 鼠标设置为 指向 */
     cursor: pointer;
+    /* 不透明度 */
     opacity: 0.75;
 }
 
@@ -75,8 +94,11 @@ body {
 
 #control-wrapper {
     text-align: center;
+    /* 布局方式: flex */
     display: flex;
+    /* 换行 */
     flex-wrap: wrap;
+    /* 设置间隔 */
     justify-content: space-around;
 }
 
@@ -92,8 +114,10 @@ body {
     background-color: #49B749;
 }
 
+/* 当浏览器窗口宽度在 1400px- 时*/
 @media only screen and (min-width: 1400px) {
     .todo-wrapper {
+        /* 宽度设置 */
         width: 50%;
     }
 
@@ -103,6 +127,7 @@ body {
 
 }
 
+/* 当浏览器窗口宽度在 750-1400px 时*/
 @media only screen and (max-width: 1399px) and (min-width: 750px) {
     .todo-wrapper {
         width: 75%;

@@ -1,7 +1,10 @@
 <html>
 
 <head>
+    <!-- 设定编码方式 -->
+    <meta charset='utf-8'>
     <title>ToDoList</title>
+    <!-- 连接样式表 -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -10,6 +13,7 @@
         <h2>My to-do list</h2>
         <p>Double-click an item to mark it complete.</p>
         <form name="todo-adder">
+            <!-- 触发 enter 响应 -->
             <input type="text" id="todo-entry-box" onkeydown=keyDown() />
             <!-- 添加隐藏input, 屏蔽form回车默认提交 -->
             <input style="display:none" />

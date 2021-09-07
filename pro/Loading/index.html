@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Loading Demo</title>
+    <style>
+    /* 设置居中 */
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    /* 设置文本特色 */
+    .loading {
+        max-width: 50%;
+        line-height: 1.4;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    /* 设置文本特色 */
+    .loading__author {
+        font-weight: normal;
+        font-size: 0.9rem;
+        color: rgba(189, 189, 189, 1);
+        margin: 0.6rem 0 0.2rem 0;
+        display: block;
+    }
+
+    /* 动画 */
+    .loading__anim {
+        width: 35px;
+        height: 35px;
+        /* 设置显示为 行内块级 */
+        display: inline-block;
+        /* 边框设置 */
+        border: 5px solid rgba(189, 189, 189, 0.25);
+        /* 左边框颜色 */
+        border-left-color: rgba(3, 155, 229, 1);
+        /* 上边框颜色 */
+        border-top-color: rgba(3, 155, 229, 1);
+        /* 圆形 */
+        border-radius: 50%;
+        /* 动画设置 */
+        /* 动画名-单周期时间-动画播放次数-过渡类型 */
+        /* rotate 600ms 无限循环 线性过渡 */
+        animation: ccrotate 600ms infinite linear;
+    }
+
+    /* 动画定义 */
+    @keyframes ccrotate {
+        to {
+            /* 旋转一圈 */
+            transform: rotate(1turn)
+        }
+    }
+    </style>
+</head>
+
+<body>
+<!-- 增加其他加载动画 -->
+    <section class="loading">
+        For new sidebar colors, click your workspace name, then Preferences>Sidebar>Theme
+        <span class="loading__author"> - Your friends at Slack</span>
+        <span class="loading__anim"></span>
+    </section>
+</body>
+
+</html>

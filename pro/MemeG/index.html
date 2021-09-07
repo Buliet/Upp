@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="style.css">
+    <title>My Page</title>
+</head>
+
+<body>
+<!-- 增加合成图片功能一键下载, 而不是通过截屏 以及新增其他特效 -->
+    <h1>My web</h1>
+    <form>
+        Meme text: <input type="text" id="user_text" oninput="updateText()" maxlength="30">
+        Select a picture: <input type="file" id="user_picture" onchange="updatePicture()" s>
+    </form>
+    <div id="meme_text">Example text here</div>
+    <div id="meme_picture">
+        <img src="" height="500" width="600" alt="">
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

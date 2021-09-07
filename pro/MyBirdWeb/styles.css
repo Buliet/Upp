@@ -1,0 +1,461 @@
+body {
+    background-color: #7FFFD4;
+    font-family: "Helvetica", sans-serif;
+    color: purple;
+
+}
+
+h1 {
+    font-family: "Times New Roman", serif;
+    color: orange;
+}
+
+h2 {
+    font-family: serif;
+    color: Red;
+}
+
+/*ul li {
+    color: #888;
+}*/
+
+nav ul {
+    background-color: tomato;
+    padding: solid;
+    border-color: MediumVioletRed;
+    border-width: 2px;
+    border-radius: 10px;
+    justify-content: space-around;
+    /*justify-content: flex-start;*/
+    /* mobile-first */
+    padding: 0.5em;
+    /* flex 布局 */
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul li {
+    /* 选择器 设置了 li 颜色, 不影响 a 颜色, 突出显示当前页面所在 TODO */
+    color: Papayawhip;
+    /* 配置列表前的黑点标识 */
+    list-style-type: none;
+    /* note for flex */
+    /*display: inline;*/
+    /* mobile-first */
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    text-align: center;
+
+}
+
+nav ul li a {
+    text-decoration: none;
+}
+
+/*img {
+    width: 200px;
+    border: 2px solid white;
+}*/
+
+.niceLinks {
+    text-decoration: none;
+    color: #FFFAF0;
+}
+
+.niceLinks:hover {
+    /*color: repeating-linear-gradient(-45deg, red 0%, yellow 7.14%, lime 14.28%, cyan 21.42%, cyan 28.56%, blue 35.7%, magenta 42.84%, red 50%);*/
+    color: #FF0000;
+    /* 引入动画 */
+    animation: rainbowGlow 1.5s infinite;
+}
+
+/* 属性选择 */
+/*img[alt*="Robot"] {
+    border-radius: 15px;
+}*/
+
+ol li {
+    color: #000;
+}
+
+.topDivider {
+    border-top-style: solid;
+    border-top-width: 2px;
+    border-top-color: #F5FFFA;
+    padding-bottom: 10px;
+}
+
+.stylishBox {
+    background-color: #87CEFA;
+    color: #A52A2A;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #F5FFFA;
+    border-radius: 10px;
+}
+
+.someSpacing {
+    padding: 10px;
+    margin-top: 20px;
+}
+
+#myCoolText {
+    color: #003366;
+    border: 2px ridge #CCFFFF;
+    padding: 15px;
+    text-align: center;
+    animation: rainbowGlow 1.5s infinite;
+}
+
+#frontPage {
+    /*background: repeating-linear-gradient(-45deg, red 0%, yellow 7.14%, lime 14.28%, cyan 21.42%, cyan 28.56%, blue 35.7%, magenta 42.84%, red 50%);*/
+    background: lightblue;
+    background-size: 600vw 600vw;
+    /*animation: slide 30s infinite linear forwards;*/
+    /*animation: backrainbowGlow 10s infinite;*/
+}
+
+/*#happy_robot {
+    border-radius: 100%;
+    width: 200px;
+}*/
+
+#happy_robot:hover {
+    /* animation: BiggerAnim 2s 1;
+    /* 动画名 */
+    animation-name: rollRound;
+    /* 周期时间 */
+    animation-duration: 1s;
+    /* 重复次数 */
+
+    animation-iteration-count: infinite;
+}
+
+.card {
+    /*width: 200px;*/
+    /*height: 200px;*/
+    /* 设置高度和宽度范围为整体 而不是 content */
+    box-sizing: border-box;
+    border: 2px solid #F0FFFF;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    font-family: "Trebuchet MS", sans-serif;
+    /*display: inline-block;*/
+    /* 居中 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card:hover {
+    border-color: #1E90FF;
+    /* 阴影效果 */
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+    /* 变换-纵向移动 */
+    transform: translateY(-10px);
+    /* 设置过渡效果 */
+    transition: all 0.2s ease-out;
+}
+
+.cardLink {
+    color: inherit;
+    text-decoration: none;
+}
+
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+
+}
+
+.tinyPicture {
+    width: 60px;
+    border-radius: 50%;
+    /*    animation: rollRound 1s infinite;*/
+}
+
+.tinyPicture:hover {
+    animation: rollRound 1s infinite;
+}
+
+figure {
+    /*margin: 0px;*/
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.sideNoteStyle {
+    border: dotted 1px purple;
+    background-color: #cddffe;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+.warnOrange {
+    background-color: #ffa500;
+}
+
+.warnRed {
+    color: #FF4500;
+    font-size: larger;
+}
+
+.myPageLayoutGrid {
+    /* Grid 布局 */
+    display: grid;
+    /* 列间隔 */
+    grid-column-gap: 0.5em;
+    /* 行间隔 */
+    grid-row-gap: 1em;
+    /* 网格行比例 */
+    grid-template-rows: auto;
+    /* 网格列比例 */
+    grid-template-columns: 5fr 1fr;
+    /* 网格区域划分 */
+    grid-template-areas: "egArticle egAside1""egArticle egAside2""egArticle .";
+}
+
+.myGridArticle {
+    /* 网格区域定义 */
+    grid-area: egArticle;
+}
+
+.myGridAside1 {
+    grid-area: egAside1;
+}
+
+.myGridAside2 {
+    grid-area: egAside2;
+}
+
+.absPos {
+    /* 定位-绝对 */
+    position: absolute;
+    border: 1px solid black;
+}
+
+.relPos {
+    /* 定位-相对 */
+    position: relative;
+}
+
+/* 定义整体展示框 */
+#photoBox {
+    width: 800px;
+    height: 400px;
+}
+
+/* 定义元素位置 */
+#happy_robot {
+    width: 200px;
+    top: 100px;
+    left: 20px;
+}
+
+#sad_Robot {
+    width: 200px;
+    top: 100px;
+    left: 220px;
+}
+
+#boy {
+    width: 200px;
+    top: 30px;
+    left: 420px;
+    z-index: 10;
+}
+
+#girl {
+    width: 200px;
+    top: 100px;
+    left: 580px;
+    z-index: 11;
+}
+
+#atm {
+    width: 200px;
+    top: 100px;
+    left: 820px;
+}
+
+#atmh {
+    top: 160px;
+    left: 970px;
+}
+
+#neck {
+    width: 200px;
+    top: 100px;
+    left: 1020px;
+}
+
+/* 灯箱效果 */
+.lightbox {
+    background: rgba(0, 0, 0, 0.8);
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* 绝对定位 */
+    position: fixed;
+    /* 默认不展示, 但占据空间 */
+    visibility: hidden;
+    z-index: 999;
+}
+
+/* 伪类:点击后展示 */
+.lightbox:target {
+    visibility: visible;
+}
+
+/* 动画定义 */
+@keyframes biggerAnim {
+    from {
+        width: 100px;
+    }
+
+    to {
+        width: 200px;
+    }
+}
+
+@keyframes rainbowGlow {
+    0% {
+        color: red;
+    }
+
+    25% {
+        color: orange;
+    }
+
+    50% {
+        color: yellow;
+    }
+
+    75% {
+        color: green;
+    }
+
+    90% {
+        color: blue;
+    }
+
+    100% {
+        color: purple;
+    }
+}
+
+@keyframes backrainbowGlow {
+    0% {
+        background-color: red;
+    }
+
+    25% {
+        background-color: orange;
+    }
+
+    50% {
+        background-color: yellow;
+    }
+
+    75% {
+        background-color: green;
+    }
+
+    90% {
+        background-color: blue;
+    }
+
+    100% {
+        background-color: purple;
+    }
+}
+
+@keyframes slide {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: 600vw;
+    }
+}
+
+@keyframes rollOver {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes rollRound {
+
+    to {
+        /* 旋转一圈 */
+        transform: rotate(1turn)
+    }
+}
+
+/* for table */
+table,
+th,
+td {
+    border: 1px solid HoneyDew;
+    /* 边框合并-collapse/分开-separate */
+    border-collapse: collapse;
+}
+
+tr {
+    background-color: PaleTurquoise;
+}
+
+th,
+td {
+    /* 行内元素对齐方式-上方  */
+    vertical-align: top;
+    padding: 5px;
+    text-align: left;
+}
+
+th {
+    color: purple;
+}
+
+td {
+    color: purple;
+}
+
+/* adjust for bigger screen */
+@media all and (min-width: 1000px) {
+    nav ul {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .myPageLayoutGrid {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: "egArticle egAside1""egArticle egAside2";
+    }
+}
+
+@media all and (min-width: 1600px) {
+    nav ul {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .myPageLayoutGrid {
+        grid-template-columns: 5fr 1fr;
+        grid-template-areas: "egArticle egAside1""egArticle egAside2""egArticle .";
+    }
+}

@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset='utf-8'>
-    <link rel="stylesheet" href="calc.css">
-    <title>MyCalc</title>
-</head>
+    <head>
+        <meta charset='utf-8'>
+        <link rel="stylesheet" href="calc.css">
+        <title>MyCalc</title>
+    </head>
 
-<body>
-    <h1>My Calc</h1>
-    <input id="view" type="text" value="0" onkeydown=keyDown() onFocus="if (this.value==this.defaultValue) this.value='';" onBlur="if (this.value=='') this.value=this.defaultValue;">
-    <button class="button" name="button_c">C</button>
-    <br>
-    <button class="button" name="button_equal">=</button>
-    <input id="result" type="text" value="">
-    <br>
-    <button class="button" name="button_1">1</button>
-    <button class="button" name="button_2">2</button>
-    <button class="button" name="button_3">3</button>
-    <button class="button" name="button_add">+</button>
-    <br>
-    <button class="button" name="button_4">4</button>
-    <button class="button" name="button_5">5</button>
-    <button class="button" name="button_6">6</button>
-    <button class="button" name="button_minus">-</button>
-    <br>
-    <button class="button" name="button_7">7</button>
-    <button class="button" name="button_8">8</button>
-    <button class="button" name="button_9">9</button>
-    <button class="button" name="button_time">*</button>
-    <br>
-    <button class="button" name="button_0">0</button>
-    <button class="button" name="button_divided">/</button>
-    <script src="calc.js"></script>
-</body>
+    <body>
+        <!-- 增加历史记录显示 -->
+        <div class="calc">
+            <div class="calc_display">0</div>
+            <div class="calc_keys">
+                <!-- data-action 可通过 x.action 或 x.dataset.action 使用/更新 -->
+                <button class="key-operator" data-action="add">+</button>
+                <button class="key-operator" data-action="minus">-</button>
+                <button class="key-operator" data-action="multiply">x</button>
+                <button class="key-operator" data-action="divide">÷</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button>0</button>
+                <button data-action="decimal">.</button>
+                <button data-action="clear">AC</button>
+                <button class="key-equal" data-action="calculate">=</button>
+            </div>
+        </div>
+        <div class="calc_history"></div>
+        <script src="calc.js"></script>
+    </body>
 
 </html>
+<!--  -->
+<!--
+    <h1>
+    My Calc</h1>
+    <input id="view" type="text" value="0" onkeydown=keyDown() onFocus="if (this.value==this.defaultValue) this.value='';" onBlur="if (this.value=='') this.value=this.defaultValue;">
+    <br>
+    <input id="result" type="text" value="">
+    <br>
+-->

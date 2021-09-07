@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bird Conservation - Home</title>
+    <link type="text/css" rel="stylesheet" href="styles.css" />
+    <meta charset="utf-8" />
+</head>
+
+<body id="frontPage">
+<!-- 每个页面实现一个布局 以及 链接跳转等功能 -->
+    <header>
+        <!-- 导航 -->
+        <nav>
+            <ul>
+                <!-- 当前页面不设导航链接, 特殊显示, 标注当前页面 -->
+                <li>Home</li>
+                <li><a href="birds.html">Protected Birds</a></li>
+                <li><a href="conservation.html">conservation</a></li>
+                <li><a href="sanctuaries.html">Bird Sanctuaries</a></li>
+                <li><a href="photo.html">Photo Collage</a></li>
+                <li><a href="tables.html">Bird Tables</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <h1>Hello!</h1>
+            <p id="myCoolText">
+                <!-- em 斜体, strong 加粗 -->
+                <em>This website</em> is about <strong>bird conservation</strong>.
+            </p>
+            <div class="cardContainer">
+                <!-- 页面跳转到指定锚点 -->
+                <a class="cardLink" href="birds.html#Happy_Robot">
+                    <div class="card">
+                        <!-- 图片引用, alt 图片不能显示时 显示的介绍 -->
+                        <img src="Happy_Robot.jpg" class="tinyPicture" alt="Happy_Robot">
+                        <h3>Happy Robot</h3>
+                        <p>Robot: happy, electronic</p>
+                    </div>
+                </a>
+                <a class="cardLink" href="birds.html#Sad_Robot">
+                    <div class="card">
+                        <img src="Sad_Robot.jpg" class="tinyPicture" alt="Sad_Robot">
+                        <h3>Sad Robot</h3>
+                        <p>Robot: sad, electronic</p>
+                    </div>
+                </a>
+                <a class="cardLink" href="birds.html#boy">
+                    <div class="card">
+                        <img src="boy.jpg" class="tinyPicture" alt="boy">
+                        <h3>Boy</h3>
+                        <p>boy: tbox, handsome</p>
+                    </div>
+                </a>
+                <a class="cardLink" href="birds.html#girl">
+                    <div class="card">
+                        <img src="girl.jpg" class="tinyPicture" alt="girl">
+                        <h3>Girl</h3>
+                        <p>girl: tbox, clover</p>
+                    </div>
+                </a>
+                <a class="cardLink" href="birds.html#atm">
+                    <div class="card">
+                        <img src="atm.jpg" class="tinyPicture" alt="atm">
+                        <h3>Atm</h3>
+                        <p>atm: pround, powerful</p>
+                    </div>
+                </a>
+                <a class="cardLink" href="birds.html#neck">
+                    <div class="card">
+                        <img src="neck.jpg" class="tinyPicture" alt="neck">
+                        <h3>Neck</h3>
+                        <p>neck: question, nb</p>
+                    </div>
+                </a>
+            </div>
+            <section class="topDivider">
+                <h2>Protected Birds</h2>
+                <!-- 视频引用 -->
+                <iframe style="display: none;" width="560" height="315" src="https://www.youtube.com/embed/21zjFOULjXk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- google map 引用 -->
+                <iframe style="display: none;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d218040.61523192917!2d121.10339619649861!3d31.362163202100998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35b241f46a4f615b%3A0xea84a119f0bad1e3!2z5Lit5Zu95LiK5rW35biC5ZiJ5a6a5Yy6!5e0!3m2!1szh-CN!2s!4v1630676742671!5m2!1szh-CN!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <p>Some birds that are protected in Ireland</p>
+                <!-- 无序列表 -->
+                <ul>
+                    <!-- 列表项内嵌链接 -->
+                    <li><a href="https://en.wikipedia.org/wiki/Barn_owl">Barn owl
+                        </a>
+                    </li>
+                    <!-- 链接内嵌列表项 -->
+                    <a href="https://en.wikipedia.org/wiki/Hen_harrier">
+                        <li>Hen harrier</li>
+                    </a>
+                    <li>Yellowhammer</li>
+                    <li>Curlew</li>
+                </ul>
+            </section>
+            <section class=stylishBox>
+                <h2>Threats</h2>
+                <p>Threats to birds:</p>
+                <!-- 有序列表 -->
+                <ol>
+                    <li>Habitat destruction</li>
+                    <li>Pollution</li>
+                    <li>Climate change</li>
+                </ol>
+            </section>
+            <section>
+                <h2>This is a heading.</h2>
+                <!-- 图像区块-整体 -->
+                <figure>
+                    <!-- 图片 -->
+                    <a href="https://en.wikipedia.org/wiki/Bird_conservation"> <img src="barn-owl.jpg" alt="a barn owl" class="stylishBox someSpacing">
+                    </a>
+                    <!-- 图片说明 -->
+                    <figcaption>
+                        <!-- 网址导航 -->
+                        <p>This is <a class="niceLinks" href="https://en.wikipedia.org/wiki/Bird_conservation">one paragraph
+                            </a> of text.</p>
+                    </figcaption>
+                </figure>
+                <p>This is another paragraph.
+                    Everything in between one set of p tags is
+                    displayed together in one long line on the webpage.</p>
+            </section>
+        </article>
+    </main>
+    <footer>
+    </footer>
+</body>
+
+</html>

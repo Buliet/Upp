@@ -2,7 +2,7 @@
 const calc = document.querySelector('.calc');
 const keys = calc.querySelector('.calc_keys');
 const display = calc.querySelector('.calc_display');
-const history = document.querySelector('.calc_history');
+const calc_history = document.querySelector('.calc_history');
 // 属性查询
 const ClearButton = calc.querySelector('[data-action=clear]');
 
@@ -29,8 +29,15 @@ const getKeyType = (key) => {
         action === 'multiply' ||
         action === 'divide'
     ) return 'operator';
+    // clear decimal calculate
     return action;
+}
 
+const initData = (state) => {
+    state.firstValue = '';
+    state.modValue = '';
+    state.operator = '';
+    state.previousKeyType = '';
 }
 const getResult = (key, displayedNum, state) => {
     // .textContent 表示节点的文本内容
@@ -43,33 +50,43 @@ const getResult = (key, displayedNum, state) => {
         modValue,
         previousKeyType
     } = state;
+    var cresult = '';
+    var hresult = '';
 
     if (KeyType === 'number') {
         // 三元运算符
-        return displayedNum === '0' ||
+        cresult = displayedNum === '0' ||
             previousKeyType === 'operator' ||
-            previousKeyType === 'calculate' ||
-            previousKeyType === 'clear' ?
+            previousKeyType === 'calculate' ?
             keyContent :
             displayedNum + keyContent;
+        hresult = keyContent;
 
     }
     if (KeyType === 'decimal') {
         // 判断是否包含
-        if (!displayedNum.includes('.')) return displayedNum + '.';
-        if (previousKeyType === 'operator' || previousKeyType === 'calculate') return '0.';
-        return displayedNum;
-
+        if (!displayedNum.includes('.')) {
+            cresult = displayedNum + '.';
+            hresult = '.';
+        }
+        if (previousKeyType === 'operator' || previousKeyType === 'calculate') {
+            cresult = '0.';
+            hresult = cresult;
+        } else {
+            cresult = displayedNum;
+            hresult = '';
+        }
     }
 
     if (KeyType === 'operator') {
         // 且操作
-        return firstValue &&
+        cresult = firstValue &&
             operator &&
             previousKeyType !== 'operator' &&
-            previousKeyType !== 'calculate' &&
-            previousKeyType !== 'clear' ?
+            previousKeyType !== 'calculate' ?
+            // ??           && previousKeyType !== 'clear'
             calculate(firstValue, operator, displayedNum) : displayedNum;
+        hresult = keyContent;
         // way-1 update first value correctly
         //     calc.dataset.firstValue = calcValue;
         // } else {
@@ -81,15 +98,22 @@ const getResult = (key, displayedNum, state) => {
 
     }
 
-    if (KeyType === 'clear') return 0;
+    if (KeyType === 'clear') {
+        cresult = 0;
+
+        hresult = key.textContent === 'AC' ? '<br>' : "CE ";
+    }
 
     if (KeyType === 'calculate') {
-        return firstValue && previousKeyType !== 'clear' && previousKeyType !== 'operator' ?
+        cresult = firstValue ?
+            // ??&& previousKeyType !== 'clear' && previousKeyType !== 'operator'
             previousKeyType === 'calculate' ?
             calculate(displayedNum, operator, modValue) :
             calculate(firstValue, operator, displayedNum) :
-            displayedNum
+            displayedNum;
+        hresult = keyContent + cresult + '<br>';
     }
+    return [cresult, hresult]
 }
 
 const updateCalcState = (key, calc, calcValue, displayedNum) => {
@@ -102,6 +126,16 @@ const updateCalcState = (key, calc, calcValue, displayedNum) => {
     } = calc.dataset;
     calc.dataset.previousKeyType = KeyType;
 
+    // origin author miss this
+    if ((KeyType === 'number' || KeyType === 'decimal') &&
+        previousKeyType === 'calculate') {
+        initData(calc.dataset);
+    }
+
+    if (KeyType === 'clear' && key.textContent === 'AC') {
+        initData(calc.dataset);
+    }
+
     if (KeyType === 'operator') {
         calc.dataset.operator = key.dataset.action;
         calc.dataset.firstValue = firstValue &&
@@ -112,20 +146,12 @@ const updateCalcState = (key, calc, calcValue, displayedNum) => {
             displayedNum
     }
 
-
     if (KeyType === 'calculate') {
         calc.dataset.modValue = firstValue && previousKeyType === 'calculate' ?
             modValue :
             displayedNum
     }
-    if (KeyType === 'clear' && key.textContent === 'AC') {
-        calc.dataset.firstValue = '';
-        calc.dataset.modValue = '';
-        calc.dataset.operator = '';
-        calc.dataset.previousKeyType = '';
 
-        history.innerHTML = history.innerHTML + '<br>';
-    }
 }
 
 const updateVisualState = (key, calc) => {
@@ -143,15 +169,20 @@ const updateVisualState = (key, calc) => {
     }
 }
 
+const updateHistory = (result) => {
+    calc_history.innerHTML = calc_history.innerHTML + result;
+}
+
 keys.addEventListener('click', e => {
     // 监听事件 条件匹配元素/类型/id/属性等
     if (!e.target.matches('button')) return
     const key = e.target;
     const displayedNum = display.textContent;
-    const result = getResult(key, displayedNum, calc.dataset);
-    display.textContent = result;
-    updateCalcState(key, calc, result, displayedNum);
-
-    history.innerHTML = history.innerHTML + key.textContent;
+    const resultArr = getResult(key, displayedNum, calc.dataset);
+    cal_result = resultArr[0];
+    his_result = resultArr[1];
+    display.textContent = cal_result;
+    updateCalcState(key, calc, cal_result, displayedNum);
     updateVisualState(key, calc);
+    updateHistory(his_result);
 });

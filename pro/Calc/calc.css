@@ -141,6 +141,7 @@ body {
     max-width: 15em;
     /* 溢出处理方式 */
     overflow: hidden;
+    grid-area: v_calc;
 }
 
 .calc_display {
@@ -153,19 +154,16 @@ body {
 
 
 .calc_history {
-    width: 300px;
-    height: 100px;
+    width: 600px;
+    /*height: 800px;*/
     /* 超过指定宽度自动换行 */
     display: block;
+    border: dotted;
     /* 强制断行 */
     word-break: break-all;
     /* 保证单词完整的情况下断行 */
     word-wrap: break-word;
-}
-
-.calc_keys {
-    /* 网格布局 */
-    display: grid;
+    grid-area: v_calc_history;
 }
 
 .calc_keys {
@@ -176,6 +174,20 @@ body {
     /* 定义列宽, 每行占4个, 每个1fr, 相等则均分 */
     grid-template-columns: repeat(4, 1fr);
     background-color: #999;
+}
+
+.sep {
+    grid-area: v_sep;
+}
+
+.gcalc {
+    /* 网格布局 */
+    display: grid;
+    /* 设定行列间距 */
+    grid-gap: 1px;
+    /* 定义列宽, 每行占4个, 每个1fr, 相等则均分 */
+    grid-template-columns: 5fr 1fr 5fr;
+    grid-template-areas: "v_calc v_sep v_calc_history";
 }
 
 .calc_keys>* {

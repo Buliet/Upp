@@ -4,8 +4,19 @@
 </head>
 
 <body>
-<!-- 增加颜色和文字的 不同选择判断 类似脑力风暴 -->
+    <!-- 增加颜色和文字的 不同选择判断 类似脑力风暴 -->
     <h1 id="title">Guess the color!</h1>
+    <fieldset>
+        <legend>Game Type</legend>
+        <div>
+            <input type="radio" id="Word" name="GType" value="Word" checked="checked">
+            <label for="Word">Word</label>
+        </div>
+        <div>
+            <input type="radio" id="Color" name="GType" value="Color">
+            <label for="Color">Color</label>
+        </div>
+    </fieldset>
     <h2 id="colorValue"></h2>
     <br>
     <div id="buttonWrapper">
@@ -21,3 +32,6 @@
     <div id="reset"><button id="resetButton">Reset game</button></div>
     <script src="script.js"></script>
 </body>
+<footer style="display: none;">
+    <a href="https://projects.raspberrypi.org/en/projects/cd-beginner-javascript-sushi">:)</a>
+</footer>

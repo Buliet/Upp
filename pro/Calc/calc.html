@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset='utf-8'>
-        <link rel="stylesheet" href="calc.css">
-        <title>MyCalc</title>
-    </head>
+<head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="calc.css">
+    <title>MyCalc</title>
+</head>
 
-    <body>
-        <!-- 增加历史记录显示 -->
+<body>
+    <!-- 增加历史记录显示 -->
+    <div class="gcalc">
         <div class="calc">
             <div class="calc_display">0</div>
             <div class="calc_keys">
@@ -32,17 +33,13 @@
                 <button class="key-equal" data-action="calculate">=</button>
             </div>
         </div>
+        <div class="sep"></div>
         <div class="calc_history"></div>
-        <script src="calc.js"></script>
-    </body>
+    </div>
+    <script src="calc.js"></script>
+</body>
+<footer style="display: none;">
+    <a href="https://www.freecodecamp.org/news/how-to-build-an-html-calculator-app-from-scratch-using-javascript-4454b8714b98">:)</a>
+</footer>
 
 </html>
-<!--  -->
-<!--
-    <h1>
-    My Calc</h1>
-    <input id="view" type="text" value="0" onkeydown=keyDown() onFocus="if (this.value==this.defaultValue) this.value='';" onBlur="if (this.value=='') this.value=this.defaultValue;">
-    <br>
-    <input id="result" type="text" value="">
-    <br>
--->

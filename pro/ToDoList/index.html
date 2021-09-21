@@ -13,11 +13,13 @@
     <div class="todo-wrapper">
         <h2>My to-do list</h2>
         <p>Double-click an item to mark it complete.</p>
-        <form name="todo-adder">
-            <!-- 触发 enter 响应 -->
-            <input type="text" id="todo-entry-box" onkeydown=keyDown() />
+        <form id="form" name="todo-adder">
+            <!-- 回车默认提交 -->
+            <input type="text" id="todo-entry-box" />
+            <!-- 已通过js屏蔽实现 -->
+            <!--  onkeydown=keyDown() -->
             <!-- 添加隐藏input, 屏蔽form回车默认提交 -->
-            <input style="display:none" />
+            <!-- <input style="display:none" /> -->
         </form>
         <button id="add-button" class="pretty-button">Add</button>
         <br />

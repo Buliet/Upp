@@ -5,6 +5,13 @@ addButton.addEventListener("click", addToDoItem);
 
 var toDoEntryBox = document.getElementById("todo-entry-box");
 var toDoList = document.getElementById("todo-list");
+var form = document.getElementById("form");
+
+form.addEventListener('submit', (event) => {
+    // 屏蔽表单默认回车提交
+    event.preventDefault()
+    addToDoItem()
+})
 
 function addToDoItem() {
 
@@ -29,14 +36,14 @@ function newToDoItem(itemText, completed) {
 }
 
 //enter键-响应
-function keyDown() {
-    var keycode = event.keyCode;
-    console.log(keycode);
-    if (keycode == 13) //回车键是13
-    {
-        addToDoItem(); //回车后的响应函数
-    }
-}
+// function keyDown() {
+//     var keycode = event.keyCode;
+//     console.log(keycode);
+//     if (keycode == 13) //回车键是13
+//     {
+//         addToDoItem(); //回车后的响应函数
+//     }
+// }
 
 // 未完成转换已完成
 function toggleToDoItemState() {
@@ -93,7 +100,10 @@ function emptyList() {
 // 手动保存
 var savebutton = document.getElementById("save-button");
 // 通过 匿名函数 给监听函数 传参
-savebutton.addEventListener("click", function() { saveList(1) });
+var typeSave = 1;
+savebutton.addEventListener("click", function() {
+    saveList(typeSave);
+});
 
 function saveList(stype = 0) {
     console.log("saveList: " + stype.toString());
@@ -136,7 +146,7 @@ function startPro() {
     // 首次加载历史数据
     loadList();
 
-    // 每隔 60s 自动保存
+    // 每隔 60s 自动保存 或 变更时保存
     setInterval("autosave()", 1000 * 60);
 }
 

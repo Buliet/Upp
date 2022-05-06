@@ -1,0 +1,108 @@
+body {
+    background-image: url("../images/img02.png");
+    background-size: cover;
+}
+
+body>div {
+    display: flex;
+    margin: 50px 50px 0px 50px;
+}
+
+/* 分栏-左部 */
+#left {
+    height: 550px;
+    flex: 1;
+    text-align: center;
+    background-color: rgba(10, 0, 6, 0.3);
+}
+
+/* 跑马灯 */
+#marquee {
+    width: 100%;
+    height: 300px;
+}
+
+#marquee table {
+    width: 95%;
+    height: 280px;
+    margin: 5px 20px 0px 20px;
+    border-spacing: 20px;
+}
+
+#marquee table td {
+    background-color: rgba(9, 28, 38, 0.8);
+    border-radius: 5px;
+}
+
+/* 计时器：分、秒、毫秒 */
+#time {
+    font-size: 4.5em;
+    color: #02C4F2;
+}
+
+/* "START"按钮 */
+#start {
+    font-size: 3em;
+    background-color: rgba(10, 0, 6, 0.5);
+    border-style: solid;
+    border-color: #344665;
+    color: #02C4F2;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* 分栏-右部 */
+#right {
+    flex: 1;
+    margin-left: 50px;
+}
+
+/* 排行榜滚动界面 */
+#right .board1 {
+    height: 350px;
+    width: 100%;
+    border: 1px solid #344665;
+    overflow-y: scroll;
+    padding: 5px;
+    background-color: rgba(10, 0, 6, 0.2);
+}
+
+/*滚动条整体样式*/
+#right>div::-webkit-scrollbar {
+    background-color: rgba(219, 200, 212, 0.4);
+}
+
+/*滚动条里面小方块*/
+#right>div::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: rgba(155, 24, 24, 0.5);
+}
+
+/* 排行榜 */
+#leaderboard {
+    width: 100%;
+    border-color: #344665;
+    color: white;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+#leaderboard th {
+    width: 18%;
+}
+
+/* 游戏规则说明 */
+#right .board2 {
+    height: 165px;
+    width: 100%;
+    border: 1px solid #344665;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: rgba(10, 0, 6, 0.2);
+    color: white;
+    line-height: 1.5em;
+}
+
+.board2>div {
+    margin: 4px;
+}

@@ -1,0 +1,30 @@
+body {
+    /* 背景色 */
+    background-color: #000;
+    /* 字体列表, 依次使用 */
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.table {
+    /* 顶部边距(外部) */
+    margin-top: 50px;
+    background-color: #fff;
+    /* 外边框圆角 */
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    /* 内边距 */
+    padding: 30px;
+    /* 字体粗细度 */
+    font-weight: 300;
+}
+
+@media only screen and (max-width: 1399px) and (min-width: 750px) {
+    .todo-wrapper {
+        width: 75%;
+    }
+
+    .todo-wrapper input {
+        width: 400px;
+    }
+}
